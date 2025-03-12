@@ -5,7 +5,7 @@
 
     class Pessoa{
 
-        protected string $cpf;
+        
         protected string $nome;
         protected string $telefone;
         protected Endereco $endereco;
