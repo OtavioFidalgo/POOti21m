@@ -1,50 +1,21 @@
-<?php
-    namespace PHP\Modelo;
-    require_once('pessoa.php');//chamar classe
-    require_once('Cliente.php');
-    require_once('Funcionario.php');
-    require_once('Endereco.php');
-    require_once('Veiculo.php');
-    require_once('Compra.php');
-    require_once('Produto.php');
-    require_once('DAO/Conexao.php');
-    use PHP\Modelo\DAO\Conexao;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>pagina principal</title>
+</head>
+<body>
+   
+    <h1>bem vindo</h1>
+    <form method="POST" class="form-control form-control-sm">
+        <button type="submit" class="btn btn-dark"><a href="Telas/CadastrarCliente.php">Cadastrar</button>
+        <button type="submit" class="btn btn-dark"><a href="Telas/ConsultarCliente.php">Consultar</button>
+        <button type="submit" class="btn btn-dark"><a href="Telas/AtualizarCliente.php">Atualizar</button>
+        <button type="submit" class="btn btn-dark"><a href="Telas/ExcluirCliente.php">Excluir</button>
+    </form>
 
-    use PHP\Modelo\Pessoa;//define qual classe
-    use PHP\Modelo\Cliente;
-    use PHP\Modelo\Funcionario;
-    use PHP\Modelo\Endereco;
-    use PHP\Modelo\Veiculo;
-    use PHP\Modelo\Compra;
-    use PHP\Modelo\Produto;
-
-    $conexao = new Conexao();
-    $conexao->conectar();
-
-    /*
-    $endereco1 = new Endereco(1, 'avenida senador flaquer', 400, 'centro', 'sao bernardo do campo', 'sao paulo', 135762, 'brasil');
-    echo "<br>".$endereco1->imprimir();
-
-    $cliente1 = new Cliente( '12345678910', 'Allan S', '11947739284', $endereco1, 500);
-
-    $veiculo1 = new Veiculo(1, '2345678', $cliente1, 'verde', 'Logan', '2024', 'Renalt');
-
-    $produto1 = new produto(1, 'Carro', 'Médio', '500KG');
-    
-    $compra1 = new Compra(1, $produto1, 1, 30000, 50000);
-
-    //$funcionario1 = new Funcionario('12345678910', 'Allan S', '11947739284', $endereco1, 1500);
-
-    //$funcionario2 = new Funcionario('12346334610', 'Claudia', '11947573494', $endereco1, 780);
-
-    echo "<br><br>".$cliente1->imprimir();
-    echo "<br><br>".$veiculo1->imprimir();
-    echo "<br><br>".$compra1->imprimir();
-    //echo "<br><br>".$funcionario2->imprimir();*/
-
-
-
-
-
-
-?>
+</body>
+</html>

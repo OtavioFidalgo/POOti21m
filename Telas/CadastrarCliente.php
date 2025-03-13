@@ -2,11 +2,14 @@
     namespace PHP\Modelo\Telas;
     require_once('../DAO/Conexao.php');
     require_once('../DAO/Inserir.php');
+    require_once('../DAO/Consultar.php');
     use PHP\Modelo\DAO\Conexao;
     use PHP\Modelo\DAO\Inserir;
+    use PHP\Modelo\DAO\Consultar;
 
     $conexao = new Conexao();
     $inserir = new Inserir();
+    $consultar = new Consultar();
 ?>
 
 
@@ -68,6 +71,7 @@
             <input type="text" class="form-control" name="pais" placeholder="Pais">
         </div>
         <button type="submit" class="btn btn-dark">Cadastrar</button>
+        <button type="submit" class="btn btn-dark"><a href="../main.php">Voltar</button>
     </form>
     <?php
         try{
@@ -85,7 +89,7 @@
 
                 $inserir->cadastrarEndereco($conexao, $logradouro, $numero, $bairro, $cidade, $estado, $cep, $pais);
 
-                $inserir->cadastrarCliente($conexao, $cpf, $nome, $telefone, '1', $precoTotal);
+                $inserir->cadastrarCliente($conexao, $cpf, $nome, $telefone, $consultar->consultarEndereco($conexao), $precoTotal);
 
         }
         catch(Except $erro)
